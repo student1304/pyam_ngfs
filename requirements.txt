@@ -1,3 +1,4 @@
 streamlit
 pyam
 pandas
+pycollocation
