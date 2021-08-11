@@ -18,6 +18,8 @@ def get_data():
 df = get_data()
 
 st.title('PyAm NGFS Explorer')
+st.subheader('Load Data from NGFS and Display selected Variables')
+st.markdown("*[Download](./scenarios_overview.pdf) PDF with Scenario overview*")
 
 region = st.sidebar.multiselect(label='Region', options = df.region)
 d1 = df.filter(region=region)
