@@ -1,4 +1,3 @@
-streamlit==0.86.0
-pyam_iamc==1.0.0
-pandas==1.3.1
-pyam==0.2.1-alpha
+streamlit
+pyam
+pandas
