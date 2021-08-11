@@ -1,5 +1,3 @@
 streamlit
-pyam
+pyam-iamc
 pandas
-pycollocation
-sympy
