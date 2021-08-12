@@ -1,3 +1,4 @@
+pyam_iamc
 streamlit
-pyam-iamc
 pandas
+
