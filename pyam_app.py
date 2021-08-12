@@ -4,6 +4,7 @@
 import pyam 
 import pandas as pd
 import streamlit as st
+import base64
 
 # @st.cache(persist=True)
 # def get_data():
@@ -26,7 +27,9 @@ df = get_df()
 st.title('PyAm NGFS Explorer')
 st.subheader('Load data from NGFS and display selected variables')
 st.write("<br><hr>", unsafe_allow_html=True)
-st.caption("*[Download](./scenarios_overview.pdf) .pdf with scenario overview*")
+
+
+st.write(f"*[Download](https://github.com/student1304/pyam_ngfs/raw/main/scenarios_overview.pdf)  .pdf with scenario overview*", unsafe_allow_html=True)
 
 region = st.sidebar.multiselect(label='Region', options = df.region)
 d1 = df.filter(region=region)
@@ -44,21 +47,17 @@ d4 = d3.filter(variable=variable)
 #val_cols = [str(i) for i in range(2021, max_year)]
 
 chart = st.empty()
+data = st.empty()
 download_link = st.empty()
 
 try:
     ax = d4.plot(color="scenario", fill_between=dict(alpha=0.15), final_ranges=dict(linewidth=3))
     fig = ax.get_figure()
-    fig.savefig('img/fig.png')
-    
     chart = st.pyplot(fig)
-    download_link = st.caption("*Click [here]('img/fig.png') to download this chart as .png*")
 except:
     chart=st.write(" :sunglasses: *Make (more) selections in the sidebar to see a chart.*")
-    
-    
 
-## code to load data
+########## code to load data ##########
 # %%writefile load_and_save_iiasa_data.py
 # import pyam
 # import os
