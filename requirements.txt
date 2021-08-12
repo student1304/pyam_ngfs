@@ -1,4 +1,4 @@
 pyam_iamc
 streamlit
 pandas
-
+datapackage
